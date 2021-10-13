@@ -1,0 +1,12 @@
+version: '3'
+services:
+  brapi_sync:
+    container_name: brapi_sync
+    build:
+      context: ./build
+      args:
+        brapi_sync_repo: ${BRAPI_SYNC_REPO:-IntegratedBreedingPlatform/brapi-sync}
+        brapi_sync_branch: ${BRAPI_SYNC_BRANCH:-master}
+    image: brapi_sync
+    ports:
+      - 8000:8000
